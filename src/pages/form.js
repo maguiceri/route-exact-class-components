@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import { Link } from 'react-router-dom';
 
 class Form extends React.Component {
     
@@ -49,6 +51,7 @@ class Form extends React.Component {
         return(
             <>
             <div>
+                < Navbar/>
                 {showMessage && (
                     <p>{ok ? "todo salio bien" : "todo salio mal"}</p>
                 )}
@@ -61,6 +64,9 @@ class Form extends React.Component {
                 <input type="text" name="instagram" placeholder="instagram" onChange= {(e) => this.handleChange(e)}></input>
             </div>
             <button onClick = {() => this.handleClick ()}>Enviar</button>
+            <Link to="/">
+                    <button>volver a la home</button>
+            </Link>
             </>
         )
     }

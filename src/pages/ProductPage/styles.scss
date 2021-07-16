@@ -1,0 +1,23 @@
+.wrapper{
+    max-width: 50rem;
+    min-height: 20rem;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    background-color: white;
+    .wrapperBlue{
+        background-color: blue;
+        min-height: 7rem;
+    }
+    .wrapperWhite{
+        margin-top: -7.5rem;
+        .img{
+            margin: 1.5rem;
+            border: 15px solid white;
+            border-radius: 3px;
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+}

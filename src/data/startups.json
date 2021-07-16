@@ -1,0 +1,16 @@
+
+
+[
+    {
+        "id": "courseit",
+        "name": "Courseit",
+        "logo": "../../img/endava.png",
+        "desc": "Descripcion de prueba Courseit"
+    },
+    {
+        "id":"endava",
+        "name":"Endava",
+        "logo":"../../img/endava.png",
+        "desc":"Descripcion de prueba Endava"
+    }
+]

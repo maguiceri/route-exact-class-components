@@ -1,23 +1,14 @@
 import React from 'react' ;
 import Card from '../Card';
-import './styles.css';
+import './styles.scss';
+import startups from "../../data/startups.json";
+import { Link } from 'react-router-dom';
 
 class Cards extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            cards: [
-                {
-                    name: 'CourseIt',
-                    img: 'https://pbs.twimg.com/profile_images/1259719811296309249/um6CLRiM_400x400.jpg',
-                    desc:'Desc CourseIt'
-                },
-                {
-                    name:'Endava',
-                    img:'https://pbs.twimg.com/profile_images/1052208764726730753/s5bagDr__400x400.jpg',
-                    desc:'Desc Endava'
-                }
-            ]
+            cards: startups
         };
     }
 
@@ -28,18 +19,19 @@ class Cards extends React.Component{
             <div className="cardsContainer">
                 {cards.map ((card, key) => {
                 return (
-                    <>
+                        <>
                         {card.name.toLowerCase().includes(filter.toLowerCase()) && ( //FILTRAME POR LOS NOMBRES DE LAS EMPRESAS QUE INCLUYAN FILTER
-                            <Card 
-                                key={key} 
-                                name={card.name}  
-                                img={card.img} 
-                                desc={card.desc} 
-                            /> 
+                            <Link to={`/productos/${card.name.toLocaleLowerCase()}`}>
+                                <Card 
+                                    key={key} 
+                                    name={card.name}  
+                                    logo={card.logo}
+                                    desc={card.desc} 
+                                /> 
+                            </Link>
                         )}
-                    </>
-                );
-
+                        </>
+                    );
                 })}
 
             </div>

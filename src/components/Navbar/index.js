@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './styles.scss';
 import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
@@ -11,12 +11,14 @@ class Navbar extends React.Component {
     }
 
     render(){
+        const {showAutocomplete} = this.props;
         return(
             <nav >
                 <div className="autocompleteContainer">
                     <h1>Startup argentina </h1>
-                    <input 
-                    onChange={(e) => this.handleChange(e)} type="" placeholder="buscar startup" />
+                    {showAutocomplete && (
+                    <input onChange={(e) => this.handleChange(e)} type="" placeholder="buscar startup" />
+                    )}
                 </div>
                 <Link to="/form">
                     <button>formulario</button>
